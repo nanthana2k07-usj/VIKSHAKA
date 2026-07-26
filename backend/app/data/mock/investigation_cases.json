@@ -1,0 +1,120 @@
+[
+  {
+    "case_id": "VK-BLR-2024-0421",
+    "fir_number": "FIR/2024/00421",
+    "title": "Armed robbery at Jayanagar jewellery store",
+    "incident_type": "Armed Robbery",
+    "location": "Jayanagar 4th Block, Bengaluru South",
+    "state": "Karnataka",
+    "summary": "Three masked assailants breached a rear service door, took jewellery inventory, and escaped in a silver hatchback later found abandoned near Bommanahalli.",
+    "status": "investigating",
+    "officer": "Insp. Anjali Rao",
+    "persons": [
+      { "id": "P-100", "name": "Ravi Naidu", "role": "suspect", "aliases": ["The Bull"] },
+      { "id": "P-101", "name": "Anjali Rao", "role": "investigating_officer", "aliases": [] },
+      { "id": "P-102", "name": "Store Manager", "role": "complainant", "aliases": [] }
+    ],
+    "locations": [
+      { "id": "L-100", "name": "Jayanagar Jewellery Store", "role": "crime_scene" },
+      { "id": "L-101", "name": "Bommanahalli", "role": "vehicle_recovery" }
+    ],
+    "evidence": [
+      {
+        "id": "E-100",
+        "type": "cctv",
+        "description": "CAM-042 captured suspect vehicle leaving the service lane.",
+        "chain_of_custody": "Collected by SI Manoj Bhat, sealed at 2026-07-18T03:10:00Z.",
+        "reference_url": "https://example.org/mock/evidence/cam-042",
+        "collected_at": "2026-07-18T03:10:00Z"
+      },
+      {
+        "id": "E-101",
+        "type": "vehicle",
+        "description": "Silver hatchback KA-05-BX-2214 recovered abandoned near Bommanahalli.",
+        "chain_of_custody": "Recovered by patrol PCR-42 and logged in seizure memo 42-A.",
+        "reference_url": "https://example.org/mock/evidence/vehicle-ka-05-bx-2214",
+        "collected_at": "2026-07-18T04:05:00Z"
+      }
+    ],
+    "relationships": [
+      { "source": "P-100", "target": "L-100", "relationship": "seen_near", "strength": 0.84 },
+      { "source": "P-100", "target": "E-101", "relationship": "linked_vehicle", "strength": 0.79 }
+    ],
+    "mo_pattern": "Night entry through low-visibility service access, quick asset sweep, and secondary escape vehicle staging.",
+    "legal_mapping": [
+      { "code": "IPC 392", "title": "Punishment for robbery", "rationale": "Property taken by force with coordinated entry." },
+      { "code": "IPC 397", "title": "Robbery with attempt to cause death or grievous hurt", "rationale": "Weapon display reported by complainant." }
+    ],
+    "fir_draft": {
+      "complainant": "Store Manager, Jayanagar Jewellery Store",
+      "accused": "Ravi Naidu and two unidentified associates",
+      "statement": "Unknown accused persons entered through the rear service door, threatened staff, and removed jewellery inventory before fleeing.",
+      "applied_sections": ["IPC 392", "IPC 397"]
+    },
+    "linked_cases": ["VK-DEL-2024-0921", "VK-AHM-2024-0511"],
+    "timeline": [
+      "02:04 IST breach reported",
+      "02:14 IST panic alert received",
+      "03:10 IST CCTV archived",
+      "04:05 IST vehicle recovered"
+    ]
+  },
+  {
+    "case_id": "VK-BLR-2024-0430",
+    "fir_number": "FIR/2024/00430",
+    "title": "Cybercrime deepfake extortion",
+    "incident_type": "Cyber Fraud",
+    "location": "Whitefield IT Corridor, Bengaluru",
+    "state": "Karnataka",
+    "summary": "Victims received AI-generated compromising videos and extortion demands routed over overseas VoIP and encrypted messaging accounts.",
+    "status": "open",
+    "officer": "Insp. Anjali Rao",
+    "persons": [
+      { "id": "P-200", "name": "Unknown Operator", "role": "suspect", "aliases": ["VoIP Controller"] },
+      { "id": "P-201", "name": "Victim Group Alpha", "role": "victim", "aliases": [] }
+    ],
+    "locations": [
+      { "id": "L-200", "name": "Whitefield", "role": "victim_cluster" },
+      { "id": "L-201", "name": "Overseas VoIP Route", "role": "technical_origin" }
+    ],
+    "evidence": [
+      {
+        "id": "E-200",
+        "type": "digital-media",
+        "description": "Sample deepfake extortion video hash collected from victim device.",
+        "chain_of_custody": "Image and hash captured by cyber cell analyst under ticket DF-11.",
+        "reference_url": "https://example.org/mock/evidence/deepfake-hash",
+        "collected_at": "2026-07-22T09:20:00Z"
+      },
+      {
+        "id": "E-201",
+        "type": "telecom",
+        "description": "Call detail record shows repeated overseas VoIP masking.",
+        "chain_of_custody": "Telecom compliance response ingested under notice TR-008.",
+        "reference_url": "https://example.org/mock/evidence/voip-cdr",
+        "collected_at": "2026-07-22T11:45:00Z"
+      }
+    ],
+    "relationships": [
+      { "source": "P-200", "target": "E-200", "relationship": "generated_media", "strength": 0.76 },
+      { "source": "P-200", "target": "L-201", "relationship": "routed_via", "strength": 0.88 }
+    ],
+    "mo_pattern": "Synthetic persona building, cloned media generation, and rapid demand escalation using anonymized calling paths.",
+    "legal_mapping": [
+      { "code": "IT Act 66E", "title": "Violation of privacy", "rationale": "Manipulated private imagery used in the extortion attempt." },
+      { "code": "IPC 384", "title": "Punishment for extortion", "rationale": "Victims were threatened for payment." }
+    ],
+    "fir_draft": {
+      "complainant": "Victim Group Alpha",
+      "accused": "Unknown operator using overseas VoIP masking",
+      "statement": "The accused transmitted manipulated digital media and demanded payment under threat of publication.",
+      "applied_sections": ["IT Act 66E", "IPC 384"]
+    },
+    "linked_cases": ["VK-DEL-2024-0910"],
+    "timeline": [
+      "06:30 IST first victim call logged",
+      "09:20 IST media hash preserved",
+      "11:45 IST telecom response received"
+    ]
+  }
+]
